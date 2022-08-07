@@ -10,12 +10,15 @@ describe('Cell', () => {
         });
     });
     describe('clicking', () => {
-        describe('player X', () => {
-            it('shows an X', () => {
-                render(<Cell player='X' />)
-                fireEvent.click(screen.getByTestId('cell-click'));
-                expect(screen.getByTestId('cell-click')).toHaveTextContent('X')
-            })
-        })
+        it('shows an X', () => {
+            render(<Cell value='X' />)
+            fireEvent.click(screen.getByTestId('cell-click'));
+            expect(screen.getByTestId('cell-click')).toHaveTextContent('X')
+        });
+        it('shows a O', () => {
+            render(<Cell value='O' />)
+            fireEvent.click(screen.getByTestId('cell-click'));
+            expect(screen.getByTestId('cell-click')).toHaveTextContent('O')
+        });
     })
 })

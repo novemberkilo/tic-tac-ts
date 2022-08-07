@@ -2,21 +2,19 @@ import React, { useState } from 'react';
 import './cell.css';
 
 interface Props {
-    player : string
+    value : string
 }
 Cell.defaultProps = {
-    player: ''
+    value: ''
 }
-function Cell({ player }: Props) {
-    const [value, setValue] = useState('');
-
-    const clickHandler = (player: string) => {
+function Cell({ value }: Props) {
+    const clickHandler = (value: string) => {
         if (value !== '') return;
         
-        if (player === 'X') setValue('X'); else setValue('O')
+        // if (value === 'X') setValue('X'); else setValue('O')
     }
     return(
-        <div className='cell' onClick={() => clickHandler(player)}
+        <div className='cell' onClick={() => clickHandler(value)}
             data-testid='cell-click'>
             {value}
         </div>

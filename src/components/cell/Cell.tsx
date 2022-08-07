@@ -1,20 +1,18 @@
-import React, { useState } from 'react'; 
 import './cell.css';
 
 interface Props {
-    value : string
-}
-Cell.defaultProps = {
-    value: ''
-}
-function Cell({ value }: Props) {
-    const clickHandler = (value: string) => {
-        if (value !== '') return;
-        
-        // if (value === 'X') setValue('X'); else setValue('O')
+    value : string;
+    handleClick: () => void;        
     }
+
+Cell.defaultProps = {
+    value: '',
+    handleClick: () => {}
+}
+
+function Cell({ value, handleClick }: Props) {
     return(
-        <div className='cell' onClick={() => clickHandler(value)}
+        <div className='cell' onClick={handleClick}
             data-testid='cell-click'>
             {value}
         </div>

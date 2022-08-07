@@ -1,12 +1,12 @@
 import './cell.css';
 
 interface Props {
-    value : string;
+    value : string | null;
     handleClick: () => void;        
     }
 
 Cell.defaultProps = {
-    value: '',
+    value: null,
     handleClick: () => {}
 }
 

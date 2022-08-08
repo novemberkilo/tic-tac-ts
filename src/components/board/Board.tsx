@@ -11,6 +11,9 @@ const emptyBoard: BoardMap = [
     [null,null,null],
 ]
 
+// TODO: winning
+// TODO: minmax play the computer
+
 function Board () {
     const [board, setBoard] = useState<BoardMap>(emptyBoard);
     const[xIsNext, setPlayer] = useState(true);
